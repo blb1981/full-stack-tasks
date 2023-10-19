@@ -1,0 +1,13 @@
+Conditionally render dark/light button in Auth layout
+Come up with official name for app
+TODO: Make git repo and upload it
+TODO: Make sure due dates are getting saved properly (UTC)
+TODO: Style edit task form
+TODO: Improve Actions column for table
+TODO: Provide max-width for tasks table
+TODO: Style the profile page with MUI components
+TODO: Full width styling on new task form, it's too wide
+TODO: Come up with some material for the dashboard, or display all tasks in dashboard
+TODO: Make policy to block non-authorized users from accessing other user's tasks
+TODO: Sorting/filtering/pagination for table of tasks ???
+TODO: Save color mode to local storage
