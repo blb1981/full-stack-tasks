@@ -4,8 +4,7 @@ Make git repo and upload it
 Make sure due dates are getting saved properly (UTC)
   They were, but just displayed incorrectly in the task list
 Style the edit task form with mui components
-
-TODO: Style the task detail (show page) with mui components
+Style the task detail (show page) with mui components
 TODO: Add delete button/functionality to show task page
 TODO: Improve Actions column for table
 TODO: Provide max-width for tasks table
@@ -15,3 +14,4 @@ TODO: Come up with some material for the dashboard, or display all tasks in dash
 TODO: Make policy to block non-authorized users from accessing other user's tasks
 TODO: Sorting/filtering/pagination for table of tasks ???
 TODO: Save color mode to local storage
+TODO: Add button for Edit link on task page with pencil icon

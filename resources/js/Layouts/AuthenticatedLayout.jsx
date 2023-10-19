@@ -251,7 +251,9 @@ const Authenticated = ({ user, children, displayTitle }) => {
         </nav>
         <Box sx={{ p: 2, minWidth: '100%' }}>
           <Toolbar />
-          <Paper sx={{ p: 2 }}>{children}</Paper>
+          <Paper elevation={3} sx={{ p: 2 }}>
+            {children}
+          </Paper>
         </Box>
       </Box>
     </>
