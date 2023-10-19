@@ -20,6 +20,7 @@ import {
   ListItemButton,
   Drawer,
   Paper,
+  Container,
 } from '@mui/material'
 
 import MenuIcon from '@mui/icons-material/Menu'
@@ -251,9 +252,11 @@ const Authenticated = ({ user, children, displayTitle }) => {
         </nav>
         <Box sx={{ p: 2, minWidth: '100%' }}>
           <Toolbar />
-          <Paper elevation={3} sx={{ p: 2 }}>
-            {children}
-          </Paper>
+          <Container>
+            <Paper elevation={3} sx={{ p: 2, mx: -3 }}>
+              {children}
+            </Paper>
+          </Container>
         </Box>
       </Box>
     </>

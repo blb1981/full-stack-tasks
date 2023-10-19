@@ -35,11 +35,7 @@ const Edit = ({ auth, task }) => {
       displayTitle={`Edit Task: ${task.name}`}
     >
       <div>
-        <Typography
-          variant="h4"
-          component="h1"
-          sx={{ textAlign: 'center', mb: 3 }}
-        >
+        <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
           Edit Task: {task.name}
         </Typography>
 
@@ -93,7 +89,7 @@ const Edit = ({ auth, task }) => {
                   <FormControlLabel
                     control={
                       <Checkbox
-                        checked={data.is_complete}
+                        checked={Boolean(data.is_complete)}
                         onChange={(e) =>
                           setData('is_complete', e.target.checked)
                         }

@@ -32,11 +32,7 @@ const Create = ({ auth }) => {
 
   return (
     <AuthenticatedLayout user={auth.user} displayTitle="Create New Task">
-      <Typography
-        variant="h4"
-        component="h1"
-        sx={{ textAlign: 'center', mb: 3 }}
-      >
+      <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
         Create a new task
       </Typography>
       <Box>

@@ -5,9 +5,9 @@ Make sure due dates are getting saved properly (UTC)
   They were, but just displayed incorrectly in the task list
 Style the edit task form with mui components
 Style the task detail (show page) with mui components
-TODO: Add delete button/functionality to show task page
-TODO: Improve Actions column for table
-TODO: Provide max-width for tasks table
+Add delete button/functionality to show task page
+Improve Actions column for table
+Provide max-width for tasks table
 TODO: Style the profile page with MUI components
 TODO: Full width styling on new task form, it's too wide
 TODO: Come up with some material for the dashboard, or display all tasks in dashboard

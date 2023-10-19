@@ -6,7 +6,6 @@ import EditIcon from '@mui/icons-material/Edit'
 import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout'
 
 const Show = ({ auth, task }) => {
-  console.log(task)
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -72,7 +71,7 @@ const Show = ({ auth, task }) => {
         <Box sx={{ mb: 2 }}>
           <Button
             component={Link}
-            variant="outlined"
+            variant="contained"
             href={`/tasks/edit/${task.id}`}
           >
             <EditIcon sx={{ mr: 1 }} /> Edit Task
@@ -81,7 +80,7 @@ const Show = ({ auth, task }) => {
         <Divider sx={{ mb: 2 }} />
         <Box>
           <Button
-            variant="outlined"
+            variant="contained"
             color="error"
             onClick={() => handleDelete(task)}
           >
