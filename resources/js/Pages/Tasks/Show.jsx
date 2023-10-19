@@ -3,7 +3,6 @@ import { Link } from '@inertiajs/react'
 import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout'
 
 const Show = ({ auth, task }) => {
-  console.log(task)
   return (
     <AuthenticatedLayout user={auth.user}>
       <div>

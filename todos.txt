@@ -1,7 +1,8 @@
 Conditionally render dark/light button in Auth layout
 Come up with official name for app
-TODO: Make git repo and upload it
-TODO: Make sure due dates are getting saved properly (UTC)
+Make git repo and upload it
+Make sure due dates are getting saved properly (UTC)
+  They were, but just displayed incorrectly in the task list
 TODO: Style edit task form
 TODO: Improve Actions column for table
 TODO: Provide max-width for tasks table

@@ -25,7 +25,7 @@ const Create = ({ auth }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     // const formattedDate = new Date(data.due_date).toISOString().split('T')[0]
-    // setData('due_date', formattedDate)
+    // console.log(data)
 
     post(route('tasks.store'))
   }

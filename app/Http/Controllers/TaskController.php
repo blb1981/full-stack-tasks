@@ -38,6 +38,8 @@ class TaskController extends Controller
             'due_date' => 'required',
         ]);
 
+        // dd($request['due_date']);
+
         $task = Task::create([
             'name' => $request['name'],
             'due_date' => $request['due_date'],
@@ -69,7 +71,6 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        // dd($request);
         $request->validate([
             'name' => 'required',
             'due_date' => 'required',

@@ -39,7 +39,18 @@ const Index = ({ auth, tasks }) => {
             {tasks.map((task) => (
               <TableRow key={task.id}>
                 <TableCell>{task.name}</TableCell>
-                <TableCell>{new Date(task.due_date).toDateString()}</TableCell>
+                <TableCell>
+                  {/* Help from  https://stackoverflow.com/questions/673905/how-to-determine-users-locale-within-browser */}
+                  {new Date(task.due_date).toLocaleDateString(
+                    navigator.languages && navigator.languages.length
+                      ? navigator.languages[0]
+                      : navigator.language,
+                    {
+                      timeZone: 'UTC',
+                      dateStyle: 'medium',
+                    }
+                  )}
+                </TableCell>
                 <TableCell
                   sx={{
                     display: 'flex',
