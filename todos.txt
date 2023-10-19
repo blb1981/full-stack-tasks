@@ -3,7 +3,10 @@ Come up with official name for app
 Make git repo and upload it
 Make sure due dates are getting saved properly (UTC)
   They were, but just displayed incorrectly in the task list
-TODO: Style edit task form
+Style the edit task form with mui components
+
+TODO: Style the task detail (show page) with mui components
+TODO: Add delete button/functionality to show task page
 TODO: Improve Actions column for table
 TODO: Provide max-width for tasks table
 TODO: Style the profile page with MUI components

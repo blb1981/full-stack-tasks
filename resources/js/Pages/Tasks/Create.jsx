@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useForm } from '@inertiajs/react'
 import {
   TextField,
@@ -13,7 +14,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout'
-import { useState } from 'react'
 
 const Create = ({ auth }) => {
   const { data, setData, post, processing, errors } = useForm({
