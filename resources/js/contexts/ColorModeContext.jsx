@@ -7,12 +7,16 @@ const ColorModeContext = createContext({
 })
 
 const ColorModeProvider = ({ children }) => {
-  const [mode, setMode] = useState('light')
+  const storedMode = localStorage.getItem('mode')
+  const [mode, setMode] = useState(storedMode ?? 'light')
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+        setMode((prevMode) => {
+          localStorage.setItem('mode', prevMode === 'light' ? 'dark' : 'light')
+          return prevMode === 'light' ? 'dark' : 'light'
+        })
       },
     }),
     []

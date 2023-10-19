@@ -90,7 +90,6 @@ const Index = ({ auth, tasks }) => {
                       component={Link}
                       href={`/tasks/${task.id}`}
                       size="small"
-                      color="info"
                     >
                       <InfoIcon />
                     </Button>

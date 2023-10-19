@@ -44,7 +44,7 @@ export default function ConfirmPassword() {
           sx={{ width: '100%', mb: 2 }}
         />
 
-        <Button disabled={processing}>
+        <Button disabled={processing} type="submit">
           {processing ? <CircularProgress size="1.5rem" /> : 'Confirm'}
         </Button>
       </form>

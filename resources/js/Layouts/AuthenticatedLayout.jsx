@@ -107,12 +107,7 @@ const Authenticated = ({ user, children, displayTitle }) => {
   return (
     <>
       <Head title={displayTitle} />
-      <Box
-      // sx={{
-      //   display: 'flex',
-      //   minHeight: '100vh',
-      // }}
-      >
+      <Box>
         <AppBar component="nav">
           <Toolbar>
             <IconButton

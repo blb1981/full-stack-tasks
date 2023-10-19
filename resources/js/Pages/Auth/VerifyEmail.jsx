@@ -43,7 +43,7 @@ export default function VerifyEmail({ status }) {
             mt: 2,
           }}
         >
-          <Button variant="contained" disabled={processing}>
+          <Button variant="contained" disabled={processing} type="submit">
             {processing ? (
               <CircularProgress size="1.5rem" />
             ) : (

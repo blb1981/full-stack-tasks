@@ -1,10 +1,7 @@
 import { useRef } from 'react'
-import InputError from '@/Components/InputError'
-import InputLabel from '@/Components/InputLabel'
-import PrimaryButton from '@/Components/PrimaryButton'
-import TextInput from '@/Components/TextInput'
 import { useForm } from '@inertiajs/react'
 import { Transition } from '@headlessui/react'
+import { TextField, Typography, Box, Grid, Button } from '@mui/material'
 
 export default function UpdatePasswordForm({ className = '' }) {
   const passwordInput = useRef()
@@ -38,80 +35,73 @@ export default function UpdatePasswordForm({ className = '' }) {
   }
 
   return (
-    <section className={className}>
-      <header>
-        <h2 className="text-lg font-medium text-gray-900">Update Password</h2>
+    <Grid container sx={{ mb: 3 }}>
+      <Grid item xs={12} md={6}>
+        <Box>
+          <Typography variant="h5" sx={{ mb: 1 }}>
+            Update Password
+          </Typography>
 
-        <p className="mt-1 text-sm text-gray-600">
-          Ensure your account is using a long, random password to stay secure.
-        </p>
-      </header>
+          <Typography sx={{ mb: 2 }}>
+            Ensure your account is using a long, random password to stay secure.
+          </Typography>
+        </Box>
 
-      <form onSubmit={updatePassword} className="mt-6 space-y-6">
-        <div>
-          <InputLabel htmlFor="current_password" value="Current Password" />
-
-          <TextInput
+        <form onSubmit={updatePassword}>
+          <TextField
             id="current_password"
             ref={currentPasswordInput}
             value={data.current_password}
             onChange={(e) => setData('current_password', e.target.value)}
             type="password"
-            className="mt-1 block w-full"
-            autoComplete="current-password"
+            label="Current password"
+            error={Boolean(errors.current_password)}
+            helperText={errors.current_password}
+            sx={{ width: '100%', mb: 2 }}
           />
 
-          <InputError message={errors.current_password} className="mt-2" />
-        </div>
-
-        <div>
-          <InputLabel htmlFor="password" value="New Password" />
-
-          <TextInput
+          <TextField
             id="password"
             ref={passwordInput}
             value={data.password}
             onChange={(e) => setData('password', e.target.value)}
             type="password"
-            className="mt-1 block w-full"
-            autoComplete="new-password"
+            label="New Password"
+            error={Boolean(errors.password)}
+            helperText={errors.password}
+            sx={{ width: '100%', mb: 2 }}
           />
 
-          <InputError message={errors.password} className="mt-2" />
-        </div>
-
-        <div>
-          <InputLabel
-            htmlFor="password_confirmation"
-            value="Confirm Password"
-          />
-
-          <TextInput
+          <TextField
             id="password_confirmation"
             value={data.password_confirmation}
             onChange={(e) => setData('password_confirmation', e.target.value)}
             type="password"
             className="mt-1 block w-full"
             autoComplete="new-password"
+            label="Confirm Password"
+            error={Boolean(errors.password_confirmation)}
+            helperText={errors.password_confirmation}
+            sx={{ width: '100%', mb: 2 }}
           />
 
-          <InputError message={errors.password_confirmation} className="mt-2" />
-        </div>
+          <Box className="flex items-center gap-4">
+            <Button variant="contained" disabled={processing} type="submit">
+              Save
+            </Button>
 
-        <div className="flex items-center gap-4">
-          <PrimaryButton disabled={processing}>Save</PrimaryButton>
-
-          <Transition
-            show={recentlySuccessful}
-            enter="transition ease-in-out"
-            enterFrom="opacity-0"
-            leave="transition ease-in-out"
-            leaveTo="opacity-0"
-          >
-            <p className="text-sm text-gray-600">Saved.</p>
-          </Transition>
-        </div>
-      </form>
-    </section>
+            <Transition
+              show={recentlySuccessful}
+              enter="transition ease-in-out"
+              enterFrom="opacity-0"
+              leave="transition ease-in-out"
+              leaveTo="opacity-0"
+            >
+              <Typography>Saved.</Typography>
+            </Transition>
+          </Box>
+        </form>
+      </Grid>
+    </Grid>
   )
 }
