@@ -1,10 +1,73 @@
 import { Link, Head } from '@inertiajs/react'
+import { Grid, Container, Typography, Button, Box } from '@mui/material'
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
   return (
     <>
       <Head title="Welcome" />
-      <div>
+      <Container
+        sx={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}
+        maxWidth="md"
+      >
+        <Grid container>
+          <Grid item xs={12}>
+            <Typography variant="h2" sx={{ textAlign: 'center', mb: 3 }}>
+              Full Stack Tasks
+            </Typography>
+            <Typography variant="h4" sx={{ textAlign: 'center', mb: 3 }}>
+              A Super Simple To Do List App
+            </Typography>
+            <Box
+              sx={{
+                textAlign: 'center',
+              }}
+            >
+              {auth.user ? (
+                <Box>
+                  <Button
+                    variant="contained"
+                    LinkComponent={Link}
+                    href={route('dashboard')}
+                    size="large"
+                    sx={{ m: 1 }}
+                  >
+                    Go to my dashboard
+                  </Button>
+                </Box>
+              ) : (
+                <Box>
+                  <Button
+                    variant="contained"
+                    LinkComponent={Link}
+                    href={route('register')}
+                    size="large"
+                    sx={{ m: 1 }}
+                  >
+                    Sign Up for Free
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    LinkComponent={Link}
+                    href={route('login')}
+                    size="large"
+                    sx={{ m: 1 }}
+                  >
+                    Login
+                  </Button>
+                </Box>
+              )}
+            </Box>
+          </Grid>
+        </Grid>
+        <Box sx={{ mt: 'auto', mb: 3 }}>
+          <Typography variant="body2">
+            &copy;{new Date().getFullYear()}{' '}
+            <Link href="https://blbinnovation.com">BLB Innovation</Link>
+          </Typography>
+        </Box>
+      </Container>
+
+      {/* <div>
         <div>
           {auth.user ? (
             <Link href={route('dashboard')}>Dashboard</Link>
@@ -297,9 +360,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             </div>
           </div>
         </div>
-      </div>
-
-      <style>{`
+      </div> */}
+      {/* <style>{`
                 .bg-dots-darker {
                     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
                 }
@@ -308,7 +370,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
                     }
                 }
-            `}</style>
+            `}</style> */}
     </>
   )
 }

@@ -63,6 +63,7 @@ export default function Login({ status, canResetPassword }) {
           />
 
           <FormControlLabel
+            sx={{ mb: 2 }}
             control={
               <Checkbox
                 checked={data.remember}
@@ -77,6 +78,9 @@ export default function Login({ status, canResetPassword }) {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 1,
+              mb: 2,
             }}
           >
             {canResetPassword && (
@@ -84,7 +88,6 @@ export default function Login({ status, canResetPassword }) {
                 Forgot your password?
               </MuiLink>
             )}
-
             <Button variant="contained" disabled={processing} type="submit">
               {processing ? <CircularProgress size="1.5rem" /> : 'Log in'}
             </Button>
