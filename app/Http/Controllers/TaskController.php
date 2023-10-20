@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Task::class);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -79,7 +84,6 @@ class TaskController extends Controller
         $task->name = $request['name'];
         $task->due_date = $request['due_date'];
         $task->is_complete = $request['is_complete'];
-        $task->user_id = Auth::id();
 
         $task->save();
         return redirect(route('tasks.update', ['task' => $task]));

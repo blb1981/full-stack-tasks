@@ -11,8 +11,10 @@ Provide max-width for tasks table
 Style the profile page with MUI components
 Full width styling on new task form, it's too wide
 Display cards for dashboard
-TODO: Make policy to block non-authorized users from accessing other user's tasks
+Make policy to block non-authorized users from accessing other user's tasks
 TODO: Sorting/filtering/pagination for table of tasks ???
 Save color mode to local storage
 Add button for Edit link on task page with pencil icon
 Add a link to the registration page on login page
+TODO: Home page material
+TODO: Review code, clean up unneeded components/files
