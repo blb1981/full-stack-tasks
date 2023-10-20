@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TaskController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -23,7 +25,11 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        $user = Auth::user();
+        $tasksCount = $user->tasks->count();
+        $tasksRecentlyAdded = $user->tasks()->orderBy('created_at', 'desc')->take(5)->get();
+        $taskDueSoon  = $user->tasks()->where('is_complete', false)->orderBy('due_date', 'asc')->take(5)->get();
+        return Inertia::render('Dashboard', ['tasksCount' => $tasksCount, 'tasksRecentlyAdded' => $tasksRecentlyAdded, 'tasksDueSoon' => $taskDueSoon]);
     })->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

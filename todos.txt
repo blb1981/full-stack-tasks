@@ -8,9 +8,9 @@ Style the task detail (show page) with mui components
 Add delete button/functionality to show task page
 Improve Actions column for table
 Provide max-width for tasks table
-TODO: Style the profile page with MUI components
+Style the profile page with MUI components
 Full width styling on new task form, it's too wide
-TODO: Come up with some material for the dashboard, or display all tasks in dashboard
+Display cards for dashboard
 TODO: Make policy to block non-authorized users from accessing other user's tasks
 TODO: Sorting/filtering/pagination for table of tasks ???
 Save color mode to local storage
