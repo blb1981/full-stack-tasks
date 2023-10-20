@@ -89,6 +89,11 @@ export default function Login({ status, canResetPassword }) {
               {processing ? <CircularProgress size="1.5rem" /> : 'Log in'}
             </Button>
           </Box>
+          <Box>
+            <MuiLink component={iLink} href={route('register')}>
+              Need an account? Click here to register.
+            </MuiLink>
+          </Box>
         </form>
       </>
     </GuestLayout>
